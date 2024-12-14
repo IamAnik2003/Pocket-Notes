@@ -5,6 +5,7 @@ import BtnImage from "../images/Group 24.png";
 import DiolougeBox from "../components/DiolougeBox";
 import RightLogo from "../components/RightLogo";
 import NoteChats from "../components/NoteChats";
+import useIsMobile from "../components/useIsMobile";
 
 export default function Home() {
   const [showDialog, setShowDialog] = useState(false); // State to control the dialog box visibility
@@ -12,6 +13,9 @@ export default function Home() {
   const [showChatSection, setShowChatSection] = useState(false); // State to control the chat section visibility
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || []); // State to store notes
   const [selectedIndex, setSelectedIndex] = useState(undefined); // State to store selected index
+  const isMobile = useIsMobile(455); // Hook to detect mobile device
+  const [showLeftChild,setShowLeftChild]= useState(true); 
+  
 
   // Sync notes to localStorage whenever notes change
   useEffect(() => {
@@ -26,6 +30,7 @@ export default function Home() {
     setRightShowLogo(false);
     setShowChatSection(true);
     setSelectedIndex(index); // Update the selected index
+    setShowLeftChild(false);
   };
 
   const addChatToGroup = (message) => {
@@ -55,32 +60,42 @@ export default function Home() {
 
   return (
     <>
-      <div
-        className={`home-container ${showDialog ? "op" : "home-container"}`}
-        onClick={showDialog ? () => setShowDialog(false) : undefined}
-      >
+     <div
+  className={`${!isMobile ? "home-container" : "home-container-mobile"} ${showDialog ? "op" : ""}`}
+  onClick={showDialog ? () => setShowDialog(false) : undefined}
+  style={{
+    ...(showLeftChild && isMobile? { paddingLeft: "8%", paddingTop: "8%" } : {}),
+    background: isMobile &&!showLeftChild ? "#DAE5F5" : "white",
+  }}
+>
+
         {/* Left Child Section */}
-        <div className="left-child">
-          <h3>Pocket Notes</h3>
+        {isMobile&&<div>
+          {showChatSection && selectedIndex !== undefined && (
+            <NoteChats
+              notes={notes}
+              index={selectedIndex}
+              addChatToGroup={addChatToGroup}
+              isMobile={isMobile}
+              setShowChatSection={setShowChatSection}
+              setShowLeftChild={setShowLeftChild}
+            />
+          )}
+          {!isMobile && showRightLogo && <RightLogo />}
+        </div>}
+        
+        <div className={!isMobile?"left-child":undefined} style={isMobile&&!showLeftChild ? { display: "none" } : undefined}>
+
+          <h3 className="pocket-notes">Pocket Notes</h3>
           <div
-            style={{
-              width: "100%",
-              overflowX: "hidden",
-              overflowY: "scroll",
-              maxHeight: "calc(100vh - 150px)",
-              paddingRight: "5px",
-            }}
+            className="scrollable-div group-parent-div"
           >
             {notes.map((note, index) => (
               <div
                 key={index}
-                className="Note-List"
-                style={{
-                  marginBottom: "15px",
-                  background: selectedIndex === index ? "#2F2F2F2B" : "transparent",
-                  borderRadius: "8px",
-                  cursor: "pointer",
-                }}
+                className="Note-List grp-card"
+                style={isMobile ? undefined : { background: selectedIndex === index ? "#2F2F2F2B" : "transparent" }}
+
                 onClick={() => handleGroupClick(index)} // Handle click event
               >
                 <div
@@ -108,8 +123,8 @@ export default function Home() {
                 <p style={{ fontWeight: "500", fontSize: "1.4rem" }}>{note.name}</p>
               </div>
             ))}
-          </div>
-          <div style={{ position: "absolute", top: "75%", left: "23%" }}>
+
+          <div className="btn-div">
             <button
               onClick={addGroup}
               style={{ borderRadius: "50px", position: "sticky" }}
@@ -117,19 +132,23 @@ export default function Home() {
               <img style={{ position: "absolute" }} src={BtnImage} alt="" />
             </button>
           </div>
+          </div>
         </div>
 
         {/* Right Child Section */}
-        <div className="right-child">
+        {!isMobile&&<div className="right-child">
           {showChatSection && selectedIndex !== undefined && (
             <NoteChats
               notes={notes}
               index={selectedIndex}
               addChatToGroup={addChatToGroup}
+              isMobile={isMobile}
+              setShowLeftChild={setShowLeftChild}
+              setShowChatSection={setShowChatSection}
             />
           )}
-          {showRightLogo && <RightLogo />}
-        </div>
+          {!isMobile && showRightLogo && <RightLogo />}
+        </div>}
       </div>
 
       {/* Conditionally Render the Dialog Box */}

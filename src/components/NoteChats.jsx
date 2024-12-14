@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import Vector2 from "../images/Vector (4).png";
 import Vector3 from "../images/Vector (5).png";
+import Vector4 from "../images/Vector (6).png";
+import "../components/NoteChats.css";
 
-export default function NoteChats({ notes, index, addChatToGroup }) {
+export default function NoteChats({
+  notes,
+  index,
+  addChatToGroup,
+  isMobile,
+  setShowLeftChild,
+  setShowChatSection,
+}) {
   const [chatInput, setChatInput] = useState(""); // To handle textarea input
   const [isDisable, setIsDisable] = useState(true); // To handle button state
 
@@ -22,34 +31,35 @@ export default function NoteChats({ notes, index, addChatToGroup }) {
     setIsDisable(value.trim().length === 0); // Enable/disable based on input
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !isDisable) {
+      e.preventDefault(); // Prevent the default newline behavior of textarea
+      handleSend();
+    }
+  };
+
   return (
     <>
       {/* Header Section */}
-      <div
-        style={{
-          background: "#001F8B",
-          width: "100%",
-          height: "13%",
-          display: "flex",
-          gap: "3%",
-          alignItems: "center",
-          paddingLeft: "3%",
-        }}
-      >
+      <div className="chat-header-div">
+        {isMobile && (
+          <div>
+            <button
+              style={{ border: "none", background: "transparent",zIndex:"2000" }}
+              onClick={() => {
+                setShowLeftChild(true);
+                setShowChatSection(false);
+              }}
+            >
+              <img src={Vector4} alt="" />
+            </button>
+          </div>
+        )}
         <div
           style={{
-            width: "60px",
-            height: "60px",
-            borderRadius: "50px",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            color: "white",
             background: note.color,
-            fontWeight: "500",
-            fontSize: "1.1rem",
-            letterSpacing: "3px",
           }}
+          className="profile-photo"
         >
           {note.name
             .trim()
@@ -58,52 +68,16 @@ export default function NoteChats({ notes, index, addChatToGroup }) {
             .map((word) => word[0].toUpperCase())
             .join("")}
         </div>
-        <p style={{ fontWeight: "500", fontSize: "1.4rem", color: "white" }}>
-          {note.name}
-        </p>
+        <p className="grp-name">{note.name}</p>
       </div>
 
       {/* Chats Section */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          overflowX: "hidden",
-          overflowY: "scroll",
-          maxHeight: "calc(100vh - 300px)",
-        }}
-      >
+      <div className="scrollable-div chat-section">
         {note.chats && note.chats.length > 0 ? (
           note.chats.map((chat, i) => (
-            <div
-              key={i}
-              style={{
-                background: "white",
-                width: "94.2%",
-                padding: "3%",
-                marginLeft: "3%",
-                marginRight: "3%",
-                marginTop: "3%",
-                fontWeight: "400",
-                fontSize: "1.1rem",
-                letterSpacing: "1.5px",
-                borderRadius: "5px",
-                lineHeight: "1.8rem",
-                position: "relative",
-              }}
-            >
-              {chat.message}
-              <span
-                style={{
-                  position: "absolute",
-                  bottom: "5px",
-                  right: "10px",
-                  fontSize: "0.8rem",
-                  color: "gray",
-                }}
-              >
-                {chat.timestamp}
-              </span>
+            <div key={i} className="chat-card">
+              <div className="message-div">{chat.message}</div>
+              <span className="time-stamp-span">{chat.timestamp}</span>
             </div>
           ))
         ) : (
@@ -112,44 +86,19 @@ export default function NoteChats({ notes, index, addChatToGroup }) {
       </div>
 
       {/* Input Section */}
-      <div
-        style={{
-          width: "68.1%",
-          height: "26%",
-          background: "#001F8B",
-          padding: "23px",
-          boxSizing: "border-box",
-          position: "absolute",
-          top: "73%",
-        }}
-      >
+      <div className="chat-input-div">
         <textarea
           value={chatInput}
           onChange={handleInputChange}
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius: "9px",
-            border: "none",
-            padding: "2%",
-            fontSize: "1.6rem",
-            fontWeight: "400",
-            boxSizing: "border-box",
-            overflowX: "hidden",
-            overflowY: "auto",
-          }}
+          onKeyDown={handleKeyPress}
           placeholder="Enter your text here..........."
+          className="scrollable-div textarea-style"
         />
         <button
           onClick={handleSend}
+          className="sent-btn"
           style={{
-            position: "absolute",
-            left: "93%",
-            top: "65%",
-            border: "none",
-            background: "white",
-            zIndex: 1000,
-            cursor: "auto"
+            cursor: isDisable ? "not-allowed" : "pointer",
           }}
           disabled={isDisable}
         >

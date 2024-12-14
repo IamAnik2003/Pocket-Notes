@@ -1,0 +1,126 @@
+/* Shared Styles */
+.diolougebox-div {
+  background: white;
+  position: absolute;
+  padding: 2%;
+  border-radius: 6px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-new-group {
+  font-weight: 500;
+}
+
+.grp-name-label {
+  font-weight: 500;
+}
+
+.color-btn {
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.create-btn {
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  background: #001f8b;
+  border-radius: 11px;
+  letter-spacing: 0.1rem;
+}
+
+/* Larger Screens (456px and above) */
+@media only screen and (min-width: 456px) {
+  .diolougebox-div {
+    width: 33%;
+    height: 32%;
+    top: 35%;
+    left: 28%;
+  }
+
+  .create-new-group {
+    font-size: 1.3rem;
+  }
+
+  .grp-name-label,
+  .color-label {
+    font-size: 1.1rem;
+  }
+
+  .color-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .create-btn {
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    top: 78%;
+    left: 77.5%;
+    font-size: 1rem;
+  }
+}
+
+/* Smaller Screens (455px and below) */
+@media only screen and (max-width: 455px) {
+  .diolougebox-div {
+    width: 85vw;
+    height: 35%;
+    top: 35%;
+    left: 8%;
+    background: white;
+    border-radius: 6px;
+  }
+
+  .create-new-group {
+    font-size: 1.1rem;
+  }
+
+  .grp-name-label,
+  .color-label {
+    font-size: 0.9rem;
+  }
+
+  .color-btn {
+    width: 24.9px;
+    height: 24.9px;
+  }
+
+  .create-btn {
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    top: 78%;
+    left: 15%;
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Screens (320px and below) */
+@media only screen and (max-width: 320px) {
+  .diolougebox-div {
+    width: 90%;
+    padding: 3%;
+    background: white;
+    border-radius: 6px;
+  }
+
+  .color-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .create-btn {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+}

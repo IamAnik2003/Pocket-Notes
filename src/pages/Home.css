@@ -1,50 +1,127 @@
-.home-container{
-    display: flex;
-    flex-direction: row;
-}
-.left-child{
-  height: 100vh;
-  width: 35vw; 
-  background: white;
-  text-align: center;
-  justify-content: center;
-  /* overflow-x: hidden;
-  overflow-y: auto; */
-   
-}
-.right-child{
-    height: 100vh;
-    width: 75vw;  
-    background: #DAE5F5;
-    overflow: hidden;
-}
-h3{
-font-size: 2.3rem;
-font-weight: 500;
-line-height: 8.5rem;
-letter-spacing: 0.02em;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
+@media only screen and (min-width: 456px) {
 
-}
-/* .NoteImage {
-  width: fit-content;
-  height:auto;
-  position: absolute;
-  top: 25%;
-  left: 40%;
-} */
- .op{
   
-  filter:brightness(75%);
+  .home-container{
+      display: flex;
+      flex-direction: row;
+  }
+  .left-child{
+    height: 100vh;
+    width: 35vw; 
+    background: white;
+    text-align: center;
+    justify-content: center;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+     
+  }
+  /* Home.css */
 
- }
- .Note-List{
-  display: flex;
-  align-items: center;
-  gap: 7%;
+/* Group Parent Div Styles */
+.group-parent-div {
   width: 100%;
-  height: 5rem;
-  border-radius: 16px;
-  padding-left: 15%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: calc(100vh - 137px);
+  padding-right: 5px;
+}
+/* Home.css */
+
+/* Group Card Styles */
+.grp-card {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent; /* Default background */
+}
+/* Home.css */
+
+/* Button Wrapper Styles */
+.btn-div {
+  position: absolute;
+  top: 75%;
+  left: 23%;
+}
+
+
+
+
+  .right-child{
+      height: 100vh;
+      width: 75vw;  
+      background: #DAE5F5;
+      overflow: hidden;
+  }
+  h3{
+  font-size: 2.3rem;
+  font-weight: 500;
+  line-height: 8.5rem;
+  letter-spacing: 0.02em;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  
+  }
+  /* .NoteImage {
+    width: fit-content;
+    height:auto;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+  } */
+   .op{
+    
+    filter:brightness(75%);
+  
+   }
+   .Note-List{
+    display: flex;
+    align-items: center;
+    gap: 7%;
+    width: 100%;
+    height: 5rem;
+    border-radius: 16px;
+    padding-left: 15%;
+   }
+}
+ @media only screen and (max-width:455px) {
+  .home-container-mobile{
+    height: 100vh;
+    width: 100vw; 
+    background: white;
+    text-align: center;
+    justify-content: center;
+   
+  }
+  .group-parent-div {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - 75px);
+    padding-right: 5px;
+  }
+  .grp-card{
+    margin-top: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+  }
+  .pocket-notes{
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 2.5%;
+    
+  }
+  .btn-div{
+    position: absolute;
+    top: 82%;
+    left: 60%;
+    width: 75px;
+    height: 75px;
+  }
+  .btn-div img{
+    
+  width:75px;height: 75px;
+  }
+  
  }

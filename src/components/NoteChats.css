@@ -1,0 +1,249 @@
+
+@media only screen and (min-width: 456px) {
+    /* Home.css */
+    
+    /* Chat Header Styles */
+    
+    .chat-header-div {
+        background: #001F8B;
+        width: 100%;
+        height: 13%;
+        display: flex;
+        gap: 3%;
+        align-items: center;
+        padding-left: 3%;
+      }
+    /* Home.css */
+    
+    /* Profile Photo Styles */
+    .profile-photo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+      }
+    /* Home.css */
+    
+    /* Group Name Styles */
+    .grp-name {
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: white;
+      }
+    /* Home.css */
+    
+    /* Chat Section Styles */
+    .chat-section {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - 40%);
+      }
+    /* Home.css */
+    
+    /* Chat Card Styles */
+    .chat-card {
+        background: white;
+        width: 94.2%;
+        padding: 3%;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 3%;
+        font-weight: 400;
+        font-size: 1.1rem;
+        letter-spacing: 1.5px;
+        border-radius: 5px;
+        line-height: 1.8rem;
+        position: relative;
+        word-wrap: break-word; /* Break long words */
+        white-space: pre-wrap; /* Preserve whitespace and wrap text */
+        overflow-wrap: break-word; /* Ensure content wraps within the container */
+      }
+    /* Home.css */
+    
+    /* Time Stamp Span Styles */
+    .time-stamp-span {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: 0.8rem;
+        color:#353535;
+      }
+    /* Home.css */
+    
+    /* Chat Input Div Styles */
+    .chat-input-div {
+        width: 68.1%;
+        height: 26%;
+        background: #001F8B;
+        padding: 23px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 73%;
+      }
+    /* Home.css */
+    
+    /* Textarea Style */
+    .textarea-style {
+        width: 100%;
+        height: 100%;
+        border-radius: 9px;
+        border: none;
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: 400;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        resize: none;
+      }
+    /* Home.css */
+    
+    /* Sent Button Style */
+    .sent-btn {
+        position: absolute;
+        left: 89%;
+        top: 65%;
+        border: none;
+        background: white;
+        z-index: 1000;
+        cursor: pointer;
+      }
+      .message-div{
+        padding-bottom: 7%;
+      }
+    
+  }
+
+@media only screen and (max-width: 456px) {
+    /* Home.css */
+    
+    /* Chat Header Styles */
+    
+    .chat-header-div {
+        background: #001F8B;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        gap: 5%;
+        align-items: center;
+        padding-left: 6%;
+      }
+    /* Home.css */
+    
+    /* Profile Photo Styles */
+    .profile-photo {
+        width: 45px;
+        height: 45px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+      }
+    /* Home.css */
+    
+    /* Group Name Styles */
+    .grp-name {
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: white;
+      }
+    /* Home.css */
+    
+    /* Chat Section Styles */
+    .chat-section {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - 230px);
+      }
+    /* Home.css */
+    
+    /* Chat Card Styles */
+    .chat-card {
+        background: white;
+        text-align: left;
+        width: 80vw;
+        height: auto;
+        padding: 2%;
+        margin-left: 10%;
+        margin-right: 3%;
+        margin-top: 3%;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        line-height: 1.2rem;
+        position: relative;
+        word-wrap: break-word; /* Break long words */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    overflow-wrap: break-word; /* Ensure content wraps within the container */
+      }
+    /* Home.css */
+    
+    /* Time Stamp Span Styles */
+    .time-stamp-span {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: 0.5rem;
+        color: #353535;
+      }
+    /* Home.css */
+    
+    /* Chat Input Div Styles */
+    .chat-input-div {
+        width: 100vw;
+        height: 36vw;
+        background: #001F8B;
+        padding: 15px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 76.2vh;
+        
+      }
+    /* Home.css */
+    
+    /* Textarea Style */
+    .textarea-style {
+        width: 100%;
+        height: 100%;
+        border-radius: 9px;
+        border: none;
+        padding: 2%;
+        font-size: 1.2rem;
+        font-weight: 400;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        resize: none;
+      }
+    /* Home.css */
+    
+    /* Sent Button Style */
+    .sent-btn {
+        position: absolute;
+        left: 82%;
+        top: 54%;
+        border: none;
+        background: white;
+        z-index: 1000;
+        cursor: pointer;
+      }
+      .message-div{
+        padding-bottom: 7%;
+      }
+    
+  }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../components/DiolougeBox.css";
 export default function DiolougeBox({ notes, setNotes }) {
   const [groupName, setGroupName] = useState(""); // State to track the group name
   const [selectedColor, setSelectedColor] = useState(""); // State to track the selected color
@@ -27,19 +27,9 @@ export default function DiolougeBox({ notes, setNotes }) {
 
   return (
     <div
-      style={{
-        background: "white",
-        position: "absolute",
-        width: "33%",
-        height: "32%",
-        top: "35%",
-        left: "28%",
-        padding: "1.5%",
-        borderRadius: "6px",
-        zIndex: "1000",
-      }}
+      className="diolougebox-div"
     >
-      <p style={{ fontWeight: "500", fontSize: "1.3rem" }}>Create New Group</p>
+      <p className="create-new-group">Create New Group</p>
       <div
         style={{
           display: "flex",
@@ -50,7 +40,7 @@ export default function DiolougeBox({ notes, setNotes }) {
       >
         <div>
           <label
-            style={{ fontWeight: "500", fontSize: "1.1rem" }}
+            className="grp-name-label"
             htmlFor="Grp-input"
           >
             Group Name
@@ -79,7 +69,7 @@ export default function DiolougeBox({ notes, setNotes }) {
       <div style={{ display: "flex", gap: "3.5%", marginTop: "5%" }}>
         <div>
           <label
-            style={{ fontWeight: "500", fontSize: "1.1rem" }}
+           className="color-label"
             htmlFor=""
           >
             Choose Colour
@@ -92,31 +82,16 @@ export default function DiolougeBox({ notes, setNotes }) {
               key={color}
               style={{
                 background: color,
-                width: "30px",
-                height: "30px",
-                borderRadius: "50px",
                 border: selectedColor === color ? "2px solid black" : "none",
               }}
+              className="color-btn"
               onClick={() => setSelectedColor(color)} // Set selected color
             ></button>
           )
         )}
       </div>
       <button
-        style={{
-          fontWeight: "400",
-          color: "white",
-          textAlign: "center",
-          background: "#001F8B",
-          borderRadius: "11px",
-          width: "20%",
-          height: "15%",
-          position: "absolute",
-          top: "78%",
-          left: "77.5%",
-          fontSize: "1rem",
-          letterSpacing: "0.1rem",
-        }}
+       className="create-btn"
         onClick={handleCreate} // Handle button click
       >
         Create

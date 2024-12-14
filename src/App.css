@@ -5,3 +5,33 @@
   font-family: Roboto;
   cursor: pointer;
 }
+/* Custom scrollbar for WebKit browsers */
+.scrollable-div::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.scrollable-div::-webkit-scrollbar-track {
+  background: #D9D9D9; /* Track color */
+  border-radius: 10px;
+}
+
+.scrollable-div::-webkit-scrollbar-thumb {
+  background: white; /* Thumb color */
+  border-radius: 10px;
+  min-height: 10px; /* Minimum height for the thumb */
+}
+
+.scrollable-div::-webkit-scrollbar-thumb:hover {
+  background: white; /* Thumb hover color */
+}
+
+/* Remove the up and down arrows from the scrollbar */
+.scrollable-div::-webkit-scrollbar-button {
+  display: none !important; /* Explicitly hide the buttons */
+}
+
+/* Scrollbar styling for Firefox */
+.scrollable-div {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: white #D9D9D9; /* Thumb color first, then track color */
+}
