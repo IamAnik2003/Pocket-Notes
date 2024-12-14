@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../components/DiolougeBox.css";
-export default function DiolougeBox({ notes, setNotes }) {
+export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
   const [groupName, setGroupName] = useState(""); // State to track the group name
   const [selectedColor, setSelectedColor] = useState(""); // State to track the selected color
 
   // Handler for the "Create" button
   const handleCreate = () => {
+
     if (!groupName.trim() || !selectedColor) {
       alert("Please enter a group name and select a color.");
       return;
@@ -23,6 +24,7 @@ export default function DiolougeBox({ notes, setNotes }) {
     // Reset the fields
     setGroupName("");
     setSelectedColor("");
+    setShowDialog(false); // Close the dialog box
   };
 
   return (
