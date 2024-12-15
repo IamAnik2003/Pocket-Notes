@@ -61,10 +61,10 @@ export default function Home() {
   return (
     <>
      <div
-  className={`${!isMobile ? "home-container" : "home-container-mobile"} ${showDialog ? "op" : ""}`}
+  className={`${!isMobile ? "home-container" : "home-container-mobile"} ${!isMobile&&showDialog ? "op" : undefined} ${isMobile&&showDialog ? "op-for-mobile" : undefined}`}
   onClick={showDialog ? () => setShowDialog(false) : undefined}
   style={{
-    ...(showLeftChild && isMobile? { paddingLeft: "8%", paddingTop: "8%" } : {}),
+    ...(showLeftChild && isMobile? { paddingLeft: "6%", paddingTop: "6%" } : {}),
     background: isMobile &&!showLeftChild ? "#DAE5F5" : "white",
   }}
 >
@@ -124,14 +124,15 @@ export default function Home() {
               </div>
             ))}
 
-          <div className="btn-div">
-            <button
-              onClick={addGroup}
-              style={{ borderRadius: "50px", position: "sticky" }}
-            >
-              <img style={{ position: "absolute" }} src={BtnImage} alt="" />
-            </button>
           </div>
+          <div className="btn-div">
+            <button 
+              onClick={addGroup}
+              style={{ borderRadius: "50px",border:"none"}}
+              className="grp-add-btn"
+            >
+              <img style={{}} src={BtnImage} alt="" />
+            </button>
           </div>
         </div>
 
