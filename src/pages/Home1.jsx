@@ -152,7 +152,6 @@ export default function Home() {
         </div>}
       </div>
 
-      {/* Conditionally Render the Dialog Box */}
       {showDialog && <DiolougeBox notes={notes} setNotes={setNotes} setShowDialog={setShowDialog} />}
     </>
   );

@@ -73,13 +73,7 @@
   text-decoration-skip-ink: none;
   
   }
-  /* .NoteImage {
-    width: fit-content;
-    height:auto;
-    position: absolute;
-    top: 25%;
-    left: 40%;
-  } */
+  
    .op{
     
     filter:brightness(75%);

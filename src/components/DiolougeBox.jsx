@@ -1,32 +1,41 @@
 import React, { useState } from "react";
 import "../components/DiolougeBox.css";
 export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
-  const [groupName, setGroupName] = useState(""); // State to track the group name
-  const [selectedColor, setSelectedColor] = useState(""); // State to track the selected color
+  const [groupName, setGroupName] = useState(""); 
+  const [selectedColor, setSelectedColor] = useState(""); 
 
-  // Handler for the "Create" button
+  
   const handleCreate = () => {
-
     if (!groupName.trim() || !selectedColor) {
       alert("Please enter a group name and select a color.");
       return;
     }
-
-    // Create a new group object
+  
+    
+    const isDuplicate = notes.some(
+      (group) => group.name.toLowerCase() === groupName.trim().toLowerCase()
+    );
+  
+    if (isDuplicate) {
+      alert("A group with this name already exists. Please choose a different name.");
+      return;
+    }
+  
+    
     const newGroup = {
       name: groupName,
       color: selectedColor,
     };
-
-    // Update the notes array with the new group
+  
+    
     setNotes([...notes, newGroup]);
-
-    // Reset the fields
+  
+    
     setGroupName("");
     setSelectedColor("");
-    setShowDialog(false); // Close the dialog box
+    setShowDialog(false); 
   };
-
+  
   return (
     <div
       className="diolougebox-div"
@@ -63,8 +72,8 @@ export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
             placeholder="Enter group name"
             id="Grp-input"
             type="text"
-            value={groupName} // Bind to state
-            onChange={(e) => setGroupName(e.target.value)} // Update state on change
+            value={groupName} 
+            onChange={(e) => setGroupName(e.target.value)} 
           />
         </div>
       </div>
@@ -77,7 +86,7 @@ export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
             Choose Colour
           </label>
         </div>
-        {/* Color buttons */}
+        
         {["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"].map(
           (color) => (
             <button
@@ -87,14 +96,14 @@ export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
                 border: selectedColor === color ? "2px solid black" : "none",
               }}
               className="color-btn"
-              onClick={() => setSelectedColor(color)} // Set selected color
+              onClick={() => setSelectedColor(color)} 
             ></button>
           )
         )}
       </div>
       <button
        className="create-btn"
-        onClick={handleCreate} // Handle button click
+        onClick={handleCreate} 
       >
         Create
       </button>
