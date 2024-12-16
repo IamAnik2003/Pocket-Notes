@@ -95,6 +95,49 @@
     padding-left: 15%;
    }
 }
+
+@media only screen and (max-width: 769px) {
+  .btn-div {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    width: 67px;
+    height: 67px;
+    z-index: 1000;
+  }
+  .btn-div img{
+      
+    width:100%;height: 100%;
+    }
+    .grp-add-btn{
+      width: 100%;
+      height: 100%;
+      
+    }
+    h3{
+      margin-top: 3%;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 5rem;
+      letter-spacing: 0.02em;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      
+      }
+      .Note-List{
+        display: flex;
+        align-items: center;
+        justify-items: left;
+        gap: 7%;
+        width: 100%;
+        height: 5rem;
+        border-radius: 16px;
+        padding-left: 9%;
+        
+       }
+  
+
+}
  @media only screen and (max-width:455px) {
   .home-container-mobile{
     height: 100vh;
@@ -104,6 +147,16 @@
     justify-content: center;
    
   }
+  .Note-List{
+    display: flex;
+    align-items: center;
+    justify-items: left;
+    gap: 7%;
+    width: 100%;
+    height: 5rem;
+    border-radius: 16px;
+    padding-left: 1.5%;
+   }
   .group-parent-div {
     width: 100%;
     overflow-x: hidden;
@@ -112,11 +165,12 @@
     padding-right: 5px;
   }
   .grp-card{
-    margin-top: 5%;
+    margin-top: -2%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 5%;
+    
   }
   .pocket-notes{
     font-size: 2rem;

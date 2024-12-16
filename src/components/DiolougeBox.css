@@ -73,6 +73,37 @@
   }
 }
 
+ 
+@media only screen and (max-width: 1025px) {
+
+  .diolougebox-div {
+    width: 43vw;
+    height: 35%;
+    top: 35%;
+    left: 25%;
+    background: white;
+    border-radius: 6px;
+  }
+
+}
+
+
+  
+@media only screen and (max-width: 769px) {
+
+  .diolougebox-div {
+    width: 43vw;
+    height: 35%;
+    top: 35%;
+    left: 25%;
+    background: white;
+    border-radius: 6px;
+  }
+
+}
+
+ 
+
 /* Smaller Screens (455px and below) */
 @media only screen and (max-width: 455px) {
   .diolougebox-div {

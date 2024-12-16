@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Vector2 from "../images/Vector (4).png";
 import Vector3 from "../images/Vector (5).png";
 import Vector4 from "../images/Vector (6).png";
@@ -14,6 +14,7 @@ export default function NoteChats({
 }) {
   const [chatInput, setChatInput] = useState(""); // To handle textarea input
   const [isDisable, setIsDisable] = useState(true); // To handle button state
+  const chatSectionRef = useRef(null); // Reference to the chat section container
 
   const note = notes[index];
 
@@ -38,6 +39,13 @@ export default function NoteChats({
     }
   };
 
+  // Auto-scroll to the latest chat
+  useEffect(() => {
+    if (chatSectionRef.current) {
+      chatSectionRef.current.scrollTop = chatSectionRef.current.scrollHeight;
+    }
+  }, [note.chats]); // Runs whenever chats are updated
+
   return (
     <>
       {/* Header Section */}
@@ -45,7 +53,7 @@ export default function NoteChats({
         {isMobile && (
           <div>
             <button
-              style={{ border: "none", background: "transparent",zIndex:"2000" }}
+              style={{ border: "none", background: "transparent", zIndex: "2000" }}
               onClick={() => {
                 setShowLeftChild(true);
                 setShowChatSection(false);
@@ -72,7 +80,7 @@ export default function NoteChats({
       </div>
 
       {/* Chats Section */}
-      <div className="scrollable-div chat-section">
+      <div ref={chatSectionRef} className="scrollable-div chat-section">
         {note.chats && note.chats.length > 0 ? (
           note.chats.map((chat, i) => (
             <div key={i} className="chat-card">
