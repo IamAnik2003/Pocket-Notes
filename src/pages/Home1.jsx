@@ -8,28 +8,28 @@ import NoteChats from "../components/NoteChats";
 import useIsMobile from "../components/useIsMobile";
 
 export default function Home() {
-  const [showDialog, setShowDialog] = useState(false); // State to control the dialog box visibility
-  const [showRightLogo, setRightShowLogo] = useState(true); // State to control the logo visibility
-  const [showChatSection, setShowChatSection] = useState(false); // State to control the chat section visibility
-  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || []); // State to store notes
-  const [selectedIndex, setSelectedIndex] = useState(undefined); // State to store selected index
-  const isMobile = useIsMobile(455); // Hook to detect mobile device
+  const [showDialog, setShowDialog] = useState(false); 
+  const [showRightLogo, setRightShowLogo] = useState(true); 
+  const [showChatSection, setShowChatSection] = useState(false); 
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || []); 
+  const [selectedIndex, setSelectedIndex] = useState(undefined); 
+  const isMobile = useIsMobile(455); 
   const [showLeftChild,setShowLeftChild]= useState(true); 
   
 
-  // Sync notes to localStorage whenever notes change
+  
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   const addGroup = () => {
-    setShowDialog(true); // Show the dialog box
+    setShowDialog(true); 
   };
 
   const handleGroupClick = (index) => {
     setRightShowLogo(false);
     setShowChatSection(true);
-    setSelectedIndex(index); // Update the selected index
+    setSelectedIndex(index); 
     setShowLeftChild(false);
   };
 
@@ -37,14 +37,14 @@ export default function Home() {
     if (selectedIndex !== undefined && message.trim() !== "") {
       const now = new Date();
       const day = now.getDate();
-      const month = now.toLocaleString('en-US', { month: 'short' }); // Short month name
+      const month = now.toLocaleString('en-US', { month: 'short' }); 
       const year = now.getFullYear();
-      const formattedDate = `${day} ${month} ${year}`; // Concatenates without a comma
+      const formattedDate = `${day} ${month} ${year}`; 
       const formattedTime = now.toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
-      }); // Includes time in 12-hour format
+      }); 
       const formattedTimestamp = `${formattedDate} · ${formattedTime}`;
   
       const updatedNotes = [...notes];
