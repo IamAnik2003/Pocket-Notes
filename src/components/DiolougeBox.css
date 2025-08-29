@@ -1,13 +1,28 @@
 /* Shared Styles */
 .diolougebox-div {
-  background: white;
+ 
   position: absolute;
   padding: 2%;
   border-radius: 6px;
-  z-index: 1000;
+  z-index: 1001;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  top:35%;
+  left:25%;
+  min-width:500px;
+  max-width:500px;
+  min-height:230px;
+  max-height:auto;
+  
+}
+.darkDiolouge{
+  background: black;
+  color:white;
+}
+.lightDiolouge{
+  background: white;
+  color:black;
 }
 
 .create-new-group {
@@ -25,6 +40,11 @@
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+ min-width:10%;
+ max-width:10%;
+ min-height:33%;
+ max-height:33%;
+
 }
 
 .color-btn:hover {
@@ -38,16 +58,10 @@
   background: #001f8b;
   border-radius: 11px;
   letter-spacing: 0.1rem;
+  margin-top:2%;
 }
 
-/* Larger Screens (456px and above) */
-@media only screen and (min-width: 456px) {
-  .diolougebox-div {
-    width: 33%;
-    height: 32%;
-    top: 35%;
-    left: 28%;
-  }
+ 
 
   .create-new-group {
     font-size: 1.3rem;
@@ -58,10 +72,7 @@
     font-size: 1.1rem;
   }
 
-  .color-btn {
-    width: 30px;
-    height: 30px;
-  }
+ 
 
   .create-btn {
     width: 20%;
@@ -71,48 +82,23 @@
     left: 77.5%;
     font-size: 1rem;
   }
-}
-
- 
-@media only screen and (max-width: 1025px) {
-
-  .diolougebox-div {
-    width: 43vw;
-    height: 35%;
-    top: 35%;
-    left: 25%;
-    background: white;
-    border-radius: 6px;
-  }
-
-}
 
 
-  
-@media only screen and (max-width: 769px) {
-
-  .diolougebox-div {
-    width: 43vw;
-    height: 35%;
-    top: 35%;
-    left: 25%;
-    background: white;
-    border-radius: 6px;
-  }
-
-}
 
  
 
 /* Smaller Screens (455px and below) */
 @media only screen and (max-width: 455px) {
   .diolougebox-div {
-    width: 83vw;
-    height: 35%;
-    top: 35%;
-    left: 7%;
+    
     background: white;
     border-radius: 6px;
+      top:30%;
+  left:5.3%;
+  min-width:90dvw;
+  max-width:90dvw;
+  min-height:180px;
+  max-height:auto;
   }
 
   .create-new-group {
@@ -121,40 +107,30 @@
 
   .grp-name-label,
   .color-label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .color-btn {
-    width: 24.9px;
-    height: 24.9px;
+    width: 2rem;
+    height: 1.8rem;
   }
 
   .create-btn {
-    width: 70%;
-    height: 15%;
+    width: 50%;
+    height: 17%;
     position: absolute;
     top: 78%;
-    left: 15%;
-    font-size: 1rem;
-  }
-}
-
-/* Extra Small Screens (320px and below) */
-@media only screen and (max-width: 320px) {
-  .diolougebox-div {
-    width: 90%;
-    padding: 3%;
-    background: white;
-    border-radius: 6px;
-  }
-
-  .color-btn {
-    width: 20px;
-    height: 20px;
-  }
-
-  .create-btn {
+    left: 26%;
     font-size: 0.9rem;
-    width: 80%;
   }
+  .darkDiolouge{
+  background: black;
+  color:white;
 }
+.lightDiolouge{
+  background: white;
+  color:black;
+}
+}
+
+

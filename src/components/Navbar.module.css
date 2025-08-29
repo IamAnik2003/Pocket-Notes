@@ -1,0 +1,216 @@
+.navbarContainer{
+    width: 100%;
+    height: 12%;
+}
+.navbar{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+}
+.navbarLight{
+    box-shadow: rgba(0, 0, 0, 0.501) 0px 2px 10px;
+}
+.navbarDark{
+    background-color: #121212;
+    box-shadow: rgba(255, 255, 255, 0.501) 0px 2px 10px;
+}
+.navbarBrand{
+    min-width: 30%;
+    min-height: 100%;
+    max-width: 40%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4%;
+    font-size: 1.7em;
+    font-weight: bold;
+   
+}
+.logoText{
+    background: linear-gradient(90deg, #4a6bff, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.navbarLinks{
+    min-width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbarList{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.2em;
+    font-weight: bold;
+    
+}
+.navItems{
+    text-decoration: none;
+
+}
+.navItems:hover{
+    background: linear-gradient(90deg, #4a6bff, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: translateY(-2px);
+
+}
+.navItems:active{
+    background: linear-gradient(90deg, #4a6bff, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(74, 107, 255, 0.3);
+}
+.navbarItemsDark{
+
+    color: white;
+}
+.navbarItemsLight{
+    color: black;
+}
+
+.btn{
+    width: auto;
+    height: auto;
+    min-width: 18%;
+    min-height: 50%;
+    max-width: 30%;
+    max-height: 50%;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    padding-left:1% ;
+    padding-right: 1%;
+}
+.registerButton{
+    background-color: #4a6bff;
+    color: white;
+    border: none;
+}
+.registerButton:hover{
+    background-color: #3a5bef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 107, 255, 0.3);
+}
+
+.loginButton{
+
+    color:#4a6bff;
+    border:2px solid #4a6bff;
+    background: transparent;
+}
+.loginButton:hover{
+ background: linear-gradient(90deg, #4a6bff, #8a2be2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(113, 119, 145, 0.3);
+    border: none;
+}
+.hamburger {
+    /* Core transparent styles */
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    
+    /* Visual styling */
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    
+    /* Remove default button styles */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Accessibility */
+    text-decoration: none !important;
+    color: inherit;
+  }
+  
+  /* Remove any potential focus rings (replace with custom style) */
+  .hamburger:focus {
+    box-shadow: none;
+  }
+  
+  /* Custom focus visible style */
+  .hamburger:focus-visible {
+    outline: 2px solid #fc16d2;
+    outline-offset: 2px;
+  }
+  
+  /* Remove any default browser styling */
+  .hamburger::-moz-focus-inner {
+    border: 0;
+  }
+  
+  /* Dark mode adaptation */
+  .dark .hamburger {
+    color: white;
+  }
+  
+@media (max-width: 634px) {
+
+    .navbarLinks{
+
+        justify-content: space-evenly;
+        min-width: 65%;
+    }
+    .btn{
+        min-width: 35%;
+        max-width: 40%;
+        padding-left: 2%;
+        padding-right: 2%;
+        font-size: 1em;
+    }
+    .navbarBrand{
+        min-width: 35%;
+        font-size: 1.5em;
+        font-weight: 900;
+    }
+    .mobileMenu{
+        position: fixed;
+        top: 10%;
+        width: 50%;
+        height: 50%;
+        z-index: 100;
+        background: blur(0px, 0px, 0px, 0.1);
+        backdrop-filter: blur(5px);
+       
+        border-radius: 20px;
+
+    }
+    .darkMenu{
+        box-shadow: rgba(255, 255, 255, 0.501) 0px 2px 10px;
+    }
+    .lightMenu{
+        box-shadow: rgba(0, 0, 0, 0.501) 0px 2px 10px;
+    }
+    .navbarList{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}

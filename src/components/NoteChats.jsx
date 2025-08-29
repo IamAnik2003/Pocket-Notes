@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef,useContext } from "react";
 import Vector2 from "../images/Vector (4).png";
 import Vector3 from "../images/Vector (5).png";
 import Vector4 from "../images/Vector (6).png";
 import "../components/NoteChats.css";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function NoteChats({
   notes,
@@ -15,6 +16,7 @@ export default function NoteChats({
   const [chatInput, setChatInput] = useState(""); // To handle textarea input
   const [isDisable, setIsDisable] = useState(true); // To handle button state
   const chatSectionRef = useRef(null); // Reference to the chat section container
+  const {dark}=useContext(ThemeContext);
 
   const note = notes[index];
 
@@ -49,7 +51,7 @@ export default function NoteChats({
   return (
     <>
       {/* Header Section */}
-      <div className="chat-header-div">
+      <div className={`${"chat-header-div"}`}>
         {isMobile && (
           <div>
             <button
@@ -83,7 +85,7 @@ export default function NoteChats({
       <div ref={chatSectionRef} className="scrollable-div chat-section">
         {note.chats && note.chats.length > 0 ? (
           note.chats.map((chat, i) => (
-            <div key={i} className="chat-card">
+            <div key={i} className={`${"chat-card"} ${dark?"darkChat":"lightChat"}`}>
               <div className="message-div">{chat.message}</div>
               <span className="time-stamp-span">{chat.timestamp}</span>
             </div>

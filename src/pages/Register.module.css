@@ -1,0 +1,126 @@
+.register-container {
+  width: 100dvw;
+  height: 88dvh;
+  
+}
+.register-title{
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  width: auto;
+  margin-top: 1.5%;
+
+}
+.form-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 100%;
+  max-width: 100%;
+  height: 75dvh;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+.inLight,.inDark{
+      min-width: 40%;
+    max-width: 40%;
+    height: 45px;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    font-size: 1.2em;
+    border-radius: 20em;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.inDark{
+  color: white;
+  box-shadow: rgba(255, 255, 255, 0.501) 0px 2px 10px;
+  
+}
+.inLight{
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.501) 0px 2px 10px;
+}
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register-button-dark{
+  min-width: 25%;
+  width: auto;
+  font-size: 1.2em;
+  height: 45px;
+  border-radius: 20em;
+  border: none;
+  font-weight: bold;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: #4a6bff;
+  color: white;
+}
+.register-button-light{
+ min-width: 25%; 
+  font-size: 1.2em;
+  height: 45px;
+  border-radius: 20em;
+  border: none;
+  color: white;
+  background-color: #121212;
+  font-weight: bold;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: #ee1e1e;
+  color: black;
+}
+
+.error{
+  color: red;
+  font-size: 0.8em;
+  text-align: center;
+  width: 100%;
+
+ 
+}
+  @media (max-width: 456px) {
+  .inLight,.inDark{
+      min-width: 75%;
+    max-width: 75%;
+    height: 45px;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    font-size: 1.2em;
+    border-radius: 20em;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    outline: none;
+     padding-left: 4%;
+    font-size: 1em;
+  }
+
+    .register-title{
+      font-size: 1.4em;
+    }
+   
+
+
+  }
+

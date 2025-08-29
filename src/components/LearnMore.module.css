@@ -1,0 +1,163 @@
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popupOverlay.visible {
+  opacity: 1;
+}
+
+.popupContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.popupContent {
+  text-align: center;
+}
+
+.popupContent h2 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.featureCard {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.featureCard h3 {
+  color: #333;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.featureCard p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  background-color: #4a6bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #3a5be0;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .popupContainer {
+    background: #2d2d2d;
+    color: white;
+  }
+  
+  .popupContent h2 {
+    color: white;
+  }
+  
+  .featureCard {
+    background: #3d3d3d;
+  }
+  
+  .featureCard h3 {
+    color: white;
+  }
+  
+  .featureCard p {
+    color: #ccc;
+  }
+  
+  .closeButton {
+    color: #ccc;
+  }
+  
+  .closeButton:hover {
+    background-color: #444;
+    color: white;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .popupContainer {
+    padding: 20px;
+    width: 95%;
+  }
+  
+  .popupContent h2 {
+    font-size: 24px;
+  }
+  
+  .featureCard {
+    padding: 15px;
+  }
+  
+  .featureIcon {
+    font-size: 32px;
+  }
+}

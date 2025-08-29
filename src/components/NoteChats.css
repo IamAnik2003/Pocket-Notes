@@ -8,7 +8,7 @@
     
     .chat-header-div {
         background: #001F8B;
-        width: 100%;
+        width: 60dvw;
         height: 13%;
         display: flex;
         gap: 3%;
@@ -46,7 +46,8 @@
         flex-direction: column;
         overflow-x: hidden;
         overflow-y: auto;
-        max-height: calc(100vh - 40%);
+        min-height: 55dvh;
+        max-height: 55dvh;
       }
     /* Home.css */
     
@@ -57,7 +58,7 @@
         padding: 2%;
         margin-left: 3%;
         margin-right: 3%;
-        margin-top: 3%;
+        margin-top: 1%;
         font-weight: 400;
         font-size: 1.1rem;
         letter-spacing: 1.5px;
@@ -82,13 +83,13 @@
     
     /* Chat Input Div Styles */
     .chat-input-div {
-        width: 68.16%;
-        height: 26%;
+        width: 60dvw;
+        height: 22dvh;
         background: #001F8B;
         padding: 23px;
         box-sizing: border-box;
         position: absolute;
-        top: 74%;
+        top: 78%;
       }
     /* Home.css */
     
@@ -99,7 +100,7 @@
         border-radius: 9px;
         border: none;
         padding: 2%;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: 400;
         box-sizing: border-box;
         overflow-x: hidden;
@@ -127,13 +128,13 @@
   
 @media only screen and (max-width: 769px) {
   .chat-input-div {
-    width: 68.2vw;
-    height: 24.94vh;
+    width: 68.2dvw;
+    height: 24.94dvh;
     background: #001F8B;
     padding: 15px;
     box-sizing: border-box;
     position: absolute;
-    top: 75vh;
+    top: 75dvh;
     
   }
 }
@@ -183,7 +184,8 @@
         flex-direction: column;
         overflow-x: hidden;
         overflow-y: auto;
-        max-height: calc(100vh - 230px);
+        min-height: 50%;
+        max-height: 50%;
       }
     /* Home.css */
     
@@ -290,3 +292,21 @@
     
   }
 }
+
+.lightChat{
+  background: white;
+  color : black;
+   box-shadow: rgba(0, 0, 0, 0.501) 0px 2px 10px;
+
+
+}
+.darkChat{
+  background: rgb(32, 29, 29);
+  color : white;
+  box-shadow: rgba(161, 152, 152, 0.501) 0px 2px 10px;
+}
+
+  .chat-section {
+    min-height: 54.75dvh;
+    max-height: 54.75dvh;
+  }

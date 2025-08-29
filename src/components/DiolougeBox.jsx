@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../components/DiolougeBox.css";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { use } from "react";
+
 export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
   const [groupName, setGroupName] = useState(""); 
   const [selectedColor, setSelectedColor] = useState(""); 
-
+const {dark}=useContext(ThemeContext);
   
   const handleCreate = () => {
     if (!groupName.trim() || !selectedColor) {
@@ -38,7 +41,7 @@ export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
   
   return (
     <div
-      className="diolougebox-div"
+      className={`${"diolougebox-div"} ${dark?"darkDiolouge":"lightDiolouge"}`}
     >
       <p className="create-new-group">Create New Group</p>
       <div
@@ -65,7 +68,7 @@ export default function DiolougeBox({ notes, setNotes,setShowDialog }) {
               borderRadius: "22px",
               border: "2px solid #CCCCCC",
               paddingLeft: "10px",
-              fontSize: "0.9rem",
+              fontSize: "0.8rem",
               fontWeight: "400",
               cursor:"auto",
             }}
