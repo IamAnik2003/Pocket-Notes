@@ -1,9 +1,7 @@
 const User = require('../DB/User.model.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const getHello = (req, res) => {
-    res.send('Hello from auth controller');
-}
+
 const setUser = async (req, res) => {
     console.log("server hited")
     const {firstName, lastName, email, password} = req.body;
