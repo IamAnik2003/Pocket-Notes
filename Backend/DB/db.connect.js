@@ -3,7 +3,7 @@ const dotenv=require('dotenv');
 dotenv.config();
 
 
-const MONGO_URI=process.env.MONGO_URI || 'mongodb://localhost:27017/PocketNotes';
+const MONGO_URI=process.env.MONGO_URI || 'mongodb+srv://anik001:iamanik2003@cluster0.rxx2g9w.mongodb.net/PocketNotes?retryWrites=true&w=majority&appName=Cluster0';
 const connectDB=async()=>{
     try{
         await mongoose.connect(MONGO_URI)
