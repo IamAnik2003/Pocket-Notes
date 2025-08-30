@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Trash2 } from "lucide-react";
+import { Trash2, Plus } from "lucide-react";
+
 import axios from "axios";
 import "./Home.css";
 import BtnImage from "../images/Group 24.png";
@@ -141,16 +142,15 @@ export default function Home() {
     setGroupToDelete(null);
   };
   const updateNotesInBackend = async (updatedNotes) => {
-  try {
-    await axios.put(`${BACK_URL}/api/notes`, {
-      email: user.email,
-      notes: updatedNotes
-    });
-  } catch (err) {
-    console.error("Failed to update notes in backend:", err);
-  }
-};
-
+    try {
+      await axios.put(`${BACK_URL}/api/notes`, {
+        email: user.email,
+        notes: updatedNotes,
+      });
+    } catch (err) {
+      console.error("Failed to update notes in backend:", err);
+    }
+  };
 
   return (
     <>
@@ -259,13 +259,26 @@ export default function Home() {
               </div>
             ))}
           </div>
+
           <div className="btn-div">
             <button
               onClick={addGroup}
-              style={{ borderRadius: "50px", border: "none" }}
+              style={{
+                borderRadius: "50%",
+                border: "none",
+                backgroundColor: "#1E3A8A", // dark blue
+                color: "white",
+                width: "75px",
+                height: "75px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
+              }}
               className={`grp-add-btn ${dark ? "dark-button" : ""}`}
             >
-              <img src={BtnImage} alt="" />
+              <Plus size={35} />
             </button>
           </div>
         </div>

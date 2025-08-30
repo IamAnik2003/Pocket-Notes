@@ -77,4 +77,4 @@ console.log(keyword);
         res.status(500).json({ message: 'Server error' });
     }
 }
-module.exports={getHello,setUser,getUser,allUsers};
+module.exports={setUser,getUser,allUsers};
