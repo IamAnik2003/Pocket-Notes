@@ -31,7 +31,7 @@ export default function LogoutConfirmation({ onConfirm, onCancel }){
         <div className={styles.content}>
           <h2 className={styles.title}>Ready to leave?</h2>
           <p className={styles.message}>
-            Are you sure you want to log out of your Chirp account?
+            Are you sure you want to log out of your Pocket Notes account?
           </p>
           
           <div className={styles.buttons}>
