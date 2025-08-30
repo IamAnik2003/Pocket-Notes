@@ -150,3 +150,87 @@
         height: 100%;
     }
 }
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Animation classes */
+.heading.animateText {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.subheading.animateText {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.heroButtons.animateButtons {
+  animation: fadeIn 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.chatPreview.animateChat {
+  animation: fadeInUp 1s ease-out 0.9s forwards, pulse 2s ease-in-out 2s infinite;
+  opacity: 0;
+}
+
+/* Add a subtle hover effect to buttons */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure animations work on all devices */
+@media (prefers-reduced-motion: reduce) {
+  .heading.animateText,
+  .subheading.animateText,
+  .heroButtons.animateButtons,
+  .chatPreview.animateChat,
+  .btn {
+    animation: none;
+    transition: none;
+  }
+}

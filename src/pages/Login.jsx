@@ -54,6 +54,8 @@ export default function Login() {
         if (res.status === 200 || res.status === 201) {
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("user", JSON.stringify(res.data.user));
+          localStorage.setItem("loginTime", new Date().toISOString());
+
           toast.success("User logged in successfully");
           navigate("/chat",{ state: { user: res.data.user} });
         }

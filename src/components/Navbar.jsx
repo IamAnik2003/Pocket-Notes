@@ -6,6 +6,8 @@ import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "./useIsMobile";
+import { toast } from "react-hot-toast";
+
 
 export default function Navbar() {
   const { dark, setDark } = useContext(ThemeContext);
@@ -16,11 +18,14 @@ export default function Navbar() {
   const token = localStorage.getItem("token");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+
   useEffect(() => {
     setIsLoggedIn(!!token);
   }, [token]);
 
   const toggleDarkMode = () => {
+    toast.success(`Switching to ${dark?"light":"dark"} mode`);
+
     setDark(!dark);
     localStorage.setItem('dark',dark)
   };

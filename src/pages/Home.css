@@ -191,3 +191,29 @@
     filter:brightness(75%);
   }
  }
+ .remove-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.grp-card:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  color: red;
+}
+
+@media (max-width: 455px) {
+  .remove-btn {
+    opacity: 1; /* always visible on mobile */
+  }
+}
